@@ -1,1 +1,1 @@
-print(len(input("Enter your sentence: ").split(" ")))
+print(len(input("Enter your sentence: ").split()))
