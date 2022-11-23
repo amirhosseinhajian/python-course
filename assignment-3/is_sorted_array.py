@@ -1,5 +1,5 @@
 def convert_to_numeric_array(array):
-    splited_array = array.split(" ")
+    splited_array = array.split()
     return [int(number) for number in splited_array]
 
 def is_sorted_array(array):
