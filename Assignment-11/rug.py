@@ -12,3 +12,12 @@ def generate_rug(n):
         counter += 1
     return rug
 
+def print_rug(rug):
+    for row in rug:
+        for col in row:
+            print(col, end="")
+        print()
+
+##### TEST CASE #####
+print("When n = 7:")
+print_rug(generate_rug(7))

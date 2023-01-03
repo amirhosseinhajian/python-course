@@ -34,16 +34,19 @@ class Time:
             self.minute += 60
             self.hour -= 1
 
-    def second_to_time(self, second):
+    @staticmethod
+    def second_to_time(second):
         hour = int(second / 3600)
         minute = int((second % 3600) / 60)
         second = int(second % 60)
         return Time(hour, minute, second)
     
-    def time_to_second(self, time):
+    @staticmethod
+    def time_to_second(time):
         return time.hour * 3600 + time.minute * 60 + time.second
 
-    def gmt_to_tehran(self, time):
+    @staticmethod
+    def gmt_to_tehran(time):
         minute = time.minute + 30
         hour = time.hour + 3
         if minute > 60:
@@ -52,3 +55,20 @@ class Time:
         if hour > 23:
             hour %= 24
         return Time(hour, minute, time.second)
+
+##### TEST CASE #####
+t1 = Time(12, 47, 54)
+t2 = Time(1, 45, 19)
+print("t1 = ", end=" ")
+t1.show()
+print("t2 = ", end=" ")
+t2.show()
+print("sum:", end=" ")
+t1.sum(t2).show()
+print("sub:", end=" ")
+t1.sub(t2).show()
+print("second to time of 6010:", end=' ')
+Time.second_to_time(6010).show()
+print(f"time to second of t1:", Time.time_to_second(t1))
+print("GMT to tehran of (22: 45: 31) =", end=" ")
+Time.gmt_to_tehran(Time(22, 45, 31)).show()

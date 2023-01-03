@@ -37,3 +37,21 @@ class Fraction:
                 self.numerator = int(self.numerator / i)
                 self.denuminator = int(self.denuminator / i)
                 break
+
+##### TEST CASE #####
+a = Fraction(22, 4)
+b = Fraction(7, 5)
+print("simplified a = ", end=" ")
+a.show()
+print("simplified b = ", end="")
+b.show()
+print("sum: ", end="")
+a.sum(b).show()
+print("sub: ", end="")
+a.sub(b).show()
+print("mul: ", end="")
+a.mul(b).show()
+print("div: ", end="")
+a.div(b).show()
+print(f"Number of a: {a.to_number()}")
+print(f"Number of b: {b.to_number()}")
